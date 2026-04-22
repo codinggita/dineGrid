@@ -115,6 +115,31 @@ Dine Grid uses the **Culina Fresh** design system — a token-based system ensur
 
 ---
 
+## 📁 Project Structure
+
+```bash
+dine-grid-frontend/
+│
+├── public/
+├── src/
+│   ├── assets/
+│   ├── styles/
+│   ├── components/
+│   ├── pages/
+│   ├── context/
+│   ├── hooks/
+│   ├── services/
+│   ├── utils/
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── .env.example
+├── .gitignore
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+```
 
 ---
 
@@ -240,7 +265,20 @@ VITE_SOCKET_URL=http://localhost:5000
 4. Push to the branch — `git push origin feature/your-feature`
 5. Open a Pull Request
 
+
+
+```md
+## 🎨 Figma Prototype
+
+View the complete UI/UX prototype for **Dine Grid** here:
+
+🔗 [Open Figma Prototype](https://www.figma.com/proto/wODk5OYF7qmvW3zCsY2Fzr/Untitled?node-id=214-145&viewport=35468%2C-15250%2C0.35&t=Cx7EC9NLGYd4OrWc-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=214%3A145&show-proto-sidebar=1&page-id=0%3A1)
+
 ---
+```
+
+---
+
 
 ## 📄 License
 
