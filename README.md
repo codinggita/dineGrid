@@ -19,7 +19,7 @@
 | 🌐 Live Demo | [dinegrid.vercel.app](#) |
 | 🎥 Video Walkthrough | [Watch Demo](#) |
 | 🗂️ Backend Repo | [dine-grid-backend](#) |
-| 🎨 Figma Design | [Open Figma Prototype](https://www.figma.com/proto/wODk5OYF7qmvW3zCsY2Fzr/Untitled?node-id=214-145&viewport=35468%2C-15250%2C0.35&t=Cx7EC9NLGYd4OrWc-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=214%3A145&show-proto-sidebar=1&page-id=0%3A1) |
+| 🎨 Figma Design | [Open Figma Prototype](https://www.figma.com/proto/wODk5OYF7qmvW3zCsY2Fzr/Untitled?page-id=0%3A1&node-id=245-4&viewport=35468%2C-15250%2C0.35&t=lS5z9R7jmI5H7UyB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=51%3A13) |
 ---
 
 ## 📌 About The Project
