@@ -1,68 +1,73 @@
+@import "tailwindcss";
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* ── Brand Colors ── */
+  --color-primary: #4CAF50;
+  /* CTAs, active states */
+  --color-primary-dark: #388E3C;
+  /* Hover states for primary */
+  --color-secondary: #FF9800;
+  /* Deal badges, highlights */
+  --color-tertiary: #F26F9D;
+  /* Tags, accent elements */
+  --color-neutral: #1A1C1C;
+  /* Dark backgrounds, base text */
+  --color-neutral-light: #F5F5F5;
+  /* Card backgrounds, input fields */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* ── Typography ── */
+  --font-family: 'Inter', sans-serif;
+  --font-headline: 700;
+  --font-body: 400;
+  --font-label: 500;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Custom styles for the split layout */
+.bg-primary {
+  background-color: var(--color-primary);
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.text-primary {
+  color: var(--color-primary);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.border-primary {
+  border-color: var(--color-primary);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.bg-secondary {
+  background-color: var(--color-secondary);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--color-tertiary);
+}
+
+.text-tertiary {
+  color: var(--color-tertiary);
+}
+
+.bg-neutral-dark {
+  background-color: var(--color-neutral);
+}
+
+.text-neutral-dark {
+  color: var(--color-neutral);
+}
+
+.bg-neutral-light {
+  background-color: var(--color-neutral-light);
 }
