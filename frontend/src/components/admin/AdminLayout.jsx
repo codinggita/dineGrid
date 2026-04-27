@@ -27,7 +27,7 @@ const AdminLayout = ({ children }) => {
 
   const handleLogout = () => {
     logout();
-    navigate('/admin-login');
+    navigate('/login');
   };
 
   const initials = user?.name ? user.name.slice(0, 2).toUpperCase() : 'AD';

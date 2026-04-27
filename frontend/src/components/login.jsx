@@ -1,6 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { User, ShieldCheck, UtensilsCrossed } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
+  const [role, setRole] = useState('customer');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email || !password) {
+      setError('Please fill in all fields.');
+      return;
+    }
+    const userData = login(email, password, role);
+    if (userData.role === 'admin') navigate('/admin/dashboard');
+    else navigate('/customer');
+  };
+
   return (
     <div className="relative min-h-screen w-full font-['Inter'] bg-[#F5F5F5] lg:bg-transparent">
 
@@ -58,12 +79,40 @@ const Login = () => {
             {/* Form Card */}
             <div className="rounded-3xl bg-white p-8 shadow-xl sm:p-10">
 
-              <header className="mb-8">
+              <header className="mb-8 text-center lg:text-left">
                 <h3 className="mb-2 text-3xl font-bold tracking-tight text-[#1A1C1C]">Welcome Back</h3>
                 <p className="text-[#1A1C1C]/60">Enter your details to manage your grid</p>
               </header>
 
-              <form className="space-y-6">
+              {/* Role Selector */}
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                {[
+                  { key: 'customer', icon: User, label: 'Customer' },
+                  { key: 'admin', icon: ShieldCheck, label: 'Admin' },
+                ].map(({ key, icon: Icon, label }) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setRole(key)}
+                    className={`flex flex-col items-center gap-2 p-3 rounded-xl border-2 transition-all ${
+                      role === key
+                        ? 'border-[#4CAF50] bg-[#F1F8E9] shadow-sm'
+                        : 'border-neutral-100 bg-[#F5F5F5] hover:border-neutral-200'
+                    }`}
+                  >
+                    <Icon className={`w-5 h-5 ${role === key ? 'text-[#4CAF50]' : 'text-neutral-400'}`} />
+                    <span className={`text-xs font-bold uppercase tracking-wider ${role === key ? 'text-[#1B5E20]' : 'text-neutral-500'}`}>{label}</span>
+                  </button>
+                ))}
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {error && (
+                  <div className="bg-red-50 border border-red-100 text-red-600 text-xs font-bold p-3 rounded-xl">
+                    {error}
+                  </div>
+                )}
+
                 {/* Email Input */}
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#1A1C1C]" htmlFor="email">
@@ -72,6 +121,8 @@ const Login = () => {
                   <input
                     type="email"
                     id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="w-full rounded-xl border-2 border-transparent bg-[#F5F5F5] px-5 py-3.5 text-[#1A1C1C] outline-none transition-all placeholder:text-neutral-400 focus:border-[#4CAF50] focus:bg-white"
                     placeholder="chef@dinegrid.com"
                   />
@@ -90,21 +141,11 @@ const Login = () => {
                   <input
                     type="password"
                     id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="w-full rounded-xl border-2 border-transparent bg-[#F5F5F5] px-5 py-3.5 text-[#1A1C1C] outline-none transition-all placeholder:text-neutral-400 focus:border-[#4CAF50] focus:bg-white"
                     placeholder="••••••••••••"
                   />
-                </div>
-
-                {/* Remember Me */}
-                <div className="flex items-center gap-3">
-                  <input
-                    type="checkbox"
-                    id="remember"
-                    className="h-5 w-5 cursor-pointer rounded border-gray-300 text-[#4CAF50] focus:ring-[#4CAF50]"
-                  />
-                  <label htmlFor="remember" className="cursor-pointer select-none text-sm text-[#1A1C1C]/80">
-                    Remember my session
-                  </label>
                 </div>
 
                 {/* Submit Button */}
@@ -112,7 +153,7 @@ const Login = () => {
                   type="submit"
                   className="w-full rounded-xl bg-[#4CAF50] py-4 text-center font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#388E3C] hover:shadow-xl active:scale-95"
                 >
-                  Sign In to DineGrid
+                  Sign In as {role.charAt(0).toUpperCase() + role.slice(1)}
                 </button>
               </form>
 
@@ -126,9 +167,9 @@ const Login = () => {
               <div className="text-center">
                 <p className="text-sm text-[#1A1C1C]/70">
                   New to our community?{' '}
-                  <a href="#" className="font-bold text-[#FF9800] hover:underline">
+                  <Link to="/admin-signup" className="font-bold text-[#FF9800] hover:underline">
                     Request Access
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>

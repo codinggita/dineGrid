@@ -29,7 +29,7 @@ import DealsPage from './pages/deals/DealsPage';
 
 // ── Auth ────────────────────────────────────────────────────
 import { AuthProvider } from './context/AuthContext';
-import AdminLoginPage from './pages/auth/LoginPage';
+import LoginPage from './components/login';
 import SignupPage from './pages/auth/SignupPage';
 
 // ── Admin pages ─────────────────────────────────────────────
@@ -83,7 +83,6 @@ function App() {
           <Route path="/DealsPage.jsx" element={<DealsPage />} />
 
           {/* ── Auth routes ── */}
-          <Route path="/admin-login"  element={<AdminLoginPage />} />
           <Route path="/admin-signup" element={<SignupPage />} />
 
           {/* ── Admin routes ── */}

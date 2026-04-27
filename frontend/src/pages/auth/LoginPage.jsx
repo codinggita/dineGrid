@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { UtensilsCrossed, User, ShieldCheck, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
-const AdminLoginPage = () => {
+const LoginPage = () => {
   const [role, setRole] = useState('customer');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -148,4 +148,4 @@ const AdminLoginPage = () => {
   );
 };
 
-export default AdminLoginPage;
+export default LoginPage;
