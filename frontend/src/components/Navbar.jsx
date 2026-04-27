@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Home, Compass, Tag, UtensilsCrossed, HelpCircle, LogIn } from 'lucide-react';
+import { Menu, X, Home, Compass, Tag, UtensilsCrossed, HelpCircle, LogIn, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
     { name: 'Home',         icon: <Home size={20} />,            path: '/' },
     { name: 'Book Table',   icon: <Compass size={20} />,         path: '/book/date' },
     { name: 'Menu',         icon: <UtensilsCrossed size={20} />, path: '/menu' },
-    { name: 'Deals',        icon: <Tag size={20} />,             path: '#' },
+    { name: 'Deals',        icon: <Tag size={20} />,             path: '/DealsPage.jsx' },
     { name: 'How It Works', icon: <HelpCircle size={20} />,      path: '/how-it-works' },
   ];
 
@@ -43,7 +43,7 @@ const Navbar = () => {
             </Link>
             <Link to="/book/date" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">Book Table</Link>
             <Link to="/menu" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">Menu</Link>
-            <a href="#" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">Deals</a>
+            <Link to="/DealsPage.jsx" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">Deals</Link>
             <Link
               to="/how-it-works"
               className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-primary)] transition-colors"
@@ -56,6 +56,12 @@ const Navbar = () => {
           <div className="flex items-center gap-4 lg:gap-6">
             <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
               <Link to="/login" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">Login</Link>
+              <Link
+                to="/admin-login"
+                className="flex items-center gap-1.5 text-base xl:text-lg font-semibold text-[#006e1c] border border-[#006e1c] px-3 py-1.5 rounded-lg hover:bg-[#e8f5e9] transition-colors"
+              >
+                <ShieldCheck size={16} /> Admin
+              </Link>
               <button className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-4 xl:px-6 py-2.5 rounded-lg text-base xl:text-lg font-[var(--font-label)] shadow-sm transition-colors">
                 Sign Up
               </button>
@@ -147,6 +153,13 @@ const Navbar = () => {
                 className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl text-white/80 font-[var(--font-label)] text-lg hover:text-white hover:bg-white/5 transition-all"
               >
                 <LogIn size={20} /> Login
+              </Link>
+              <Link
+                to="/admin-login"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-[#006e1c] text-white font-semibold text-base transition-all hover:bg-[#005016]"
+              >
+                <ShieldCheck size={18} /> Admin Portal
               </Link>
               <button className="w-full py-4 rounded-2xl bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white font-[var(--font-label)] text-xl shadow-2xl shadow-[var(--color-primary)]/40 active:scale-95 transition-all">
                 Sign Up
