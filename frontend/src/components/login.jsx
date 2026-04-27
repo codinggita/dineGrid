@@ -19,7 +19,7 @@ const Login = () => {
     }
     const userData = login(email, password, role);
     if (userData.role === 'admin') navigate('/admin/dashboard');
-    else navigate('/customer');
+    else navigate('/menu');
   };
 
   return (
@@ -168,7 +168,7 @@ const Login = () => {
                 <p className="text-sm text-[#1A1C1C]/70">
                   New to our community?{' '}
                   <Link to="/admin-signup" className="font-bold text-[#FF9800] hover:underline">
-                    Request Access
+                    Sign up instead
                   </Link>
                 </p>
               </div>
