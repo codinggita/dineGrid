@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import api from '../utils/api';
 
 const AuthContext = createContext(null);
 
@@ -10,7 +10,9 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const stored = localStorage.getItem('dinegrid_user');
-    if (stored) {
+    const token = localStorage.getItem('dinegrid_token');
+    
+    if (stored && token) {
       const parsed = JSON.parse(stored);
       setUser(parsed);
       setRole(parsed.role);
@@ -18,23 +20,42 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const login = (email, password, selectedRole) => {
-    const userData = { email, role: selectedRole, name: email.split('@')[0] };
-    localStorage.setItem('dinegrid_user', JSON.stringify(userData));
-    setUser(userData);
-    setRole(selectedRole);
-    return userData;
+  const login = async (email, password, selectedRole) => {
+    try {
+      const response = await api.post('/auth/login', { email, password, role: selectedRole });
+      const { token, data } = response.data;
+      
+      localStorage.setItem('dinegrid_token', token);
+      localStorage.setItem('dinegrid_user', JSON.stringify(data.user));
+      
+      setUser(data.user);
+      setRole(data.user.role);
+      
+      return data.user;
+    } catch (error) {
+      throw error.response?.data?.message || 'Login failed. Please try again.';
+    }
   };
 
-  const signup = (name, email, password, selectedRole) => {
-    const userData = { email, role: selectedRole, name };
-    localStorage.setItem('dinegrid_user', JSON.stringify(userData));
-    setUser(userData);
-    setRole(selectedRole);
-    return userData;
+  const signup = async (name, email, password, selectedRole) => {
+    try {
+      const response = await api.post('/auth/signup', { name, email, password, role: selectedRole });
+      const { token, data } = response.data;
+      
+      localStorage.setItem('dinegrid_token', token);
+      localStorage.setItem('dinegrid_user', JSON.stringify(data.user));
+      
+      setUser(data.user);
+      setRole(data.user.role);
+      
+      return data.user;
+    } catch (error) {
+      throw error.response?.data?.message || 'Signup failed. Please try again.';
+    }
   };
 
   const logout = () => {
+    localStorage.removeItem('dinegrid_token');
     localStorage.removeItem('dinegrid_user');
     setUser(null);
     setRole(null);

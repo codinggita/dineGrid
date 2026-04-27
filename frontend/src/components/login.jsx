@@ -11,15 +11,20 @@ const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
       setError('Please fill in all fields.');
       return;
     }
-    const userData = login(email, password, role);
-    if (userData.role === 'admin') navigate('/admin/dashboard');
-    else navigate('/menu');
+    setError('');
+    try {
+      const userData = await login(email, password, role);
+      if (userData.role === 'admin') navigate('/admin/dashboard');
+      else navigate('/menu');
+    } catch (err) {
+      setError(err);
+    }
   };
 
   return (

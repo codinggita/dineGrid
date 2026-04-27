@@ -17,7 +17,7 @@ export default function Signup() {
   const { signup } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!firstName || !lastName || !email || !password) {
       setError("Please fill in all required fields.");
@@ -28,11 +28,16 @@ export default function Signup() {
       return;
     }
     
-    const fullName = `${firstName} ${lastName}`;
-    const userData = signup(fullName, email, password, role);
-    
-    if (userData.role === 'admin') navigate('/admin/dashboard');
-    else navigate('/menu');
+    setError("");
+    try {
+      const fullName = `${firstName} ${lastName}`;
+      const userData = await signup(fullName, email, password, role);
+      
+      if (userData.role === 'admin') navigate('/admin/dashboard');
+      else navigate('/menu');
+    } catch (err) {
+      setError(err);
+    }
   };
 
   return (
