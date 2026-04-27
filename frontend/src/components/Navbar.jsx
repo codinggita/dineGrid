@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Home, Compass, Tag, UtensilsCrossed, Info, HelpCircle, User, LogIn } from 'lucide-react';
+import { Menu, X, Home, Compass, Tag, UtensilsCrossed, HelpCircle, LogIn } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -17,12 +17,11 @@ const Navbar = () => {
   }, [isOpen]);
 
   const navLinks = [
-    { name: 'Home', icon: <Home size={20} />, path: '/' },
-    { name: 'Explore', icon: <Compass size={20} />, path: '#' },
-    { name: 'Deals', icon: <Tag size={20} />, path: '#' },
-    { name: 'Menu', icon: <UtensilsCrossed size={20} />, path: '/menu' },
-    { name: 'Restaurant Details', icon: <Info size={20} />, path: '#' },
-    { name: 'How It Works', icon: <HelpCircle size={20} />, path: '#' },
+    { name: 'Home',         icon: <Home size={20} />,            path: '/' },
+    { name: 'Book Table',   icon: <Compass size={20} />,         path: '/book/date' },
+    { name: 'Menu',         icon: <UtensilsCrossed size={20} />, path: '/menu' },
+    { name: 'Deals',        icon: <Tag size={20} />,             path: '#' },
+    { name: 'How It Works', icon: <HelpCircle size={20} />,      path: '/how-it-works' },
   ];
 
   return (
@@ -42,11 +41,15 @@ const Navbar = () => {
               Home
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--color-primary)] rounded-full"></span>
             </Link>
-            <a href="#" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">Explore</a>
-            <a href="#" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">Deals</a>
+            <Link to="/book/date" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">Book Table</Link>
             <Link to="/menu" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">Menu</Link>
-            <a href="#" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">Restaurant Details</a>
-            <a href="#" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">How It Works</a>
+            <a href="#" className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-neutral)] transition-colors">Deals</a>
+            <Link
+              to="/how-it-works"
+              className="text-base xl:text-lg font-[var(--font-label)] text-[#4A5568] hover:text-[var(--color-primary)] transition-colors"
+            >
+              How It Works
+            </Link>
           </div>
 
           {/* Right: Auth & Mobile Menu */}
