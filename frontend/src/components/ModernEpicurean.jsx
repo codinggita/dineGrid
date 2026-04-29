@@ -45,7 +45,7 @@ const ModernEpicurean = () => {
               {/* Top Left - Burger */}
               <div className="rounded-3xl overflow-hidden h-48 bg-gray-200">
                 <img 
-                  src="/epic_burger.png" 
+                  src="/src/assets/epic_burger.png" 
                   alt="Premium Burger" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -54,7 +54,7 @@ const ModernEpicurean = () => {
               {/* Top Right - Woodfire Pizza */}
               <div className="rounded-3xl overflow-hidden h-48 bg-orange-100">
                 <img 
-                  src="/epic_pizza.png" 
+                  src="/src/assets/epic_pizza.png" 
                   alt="Woodfire Pizza" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -63,7 +63,7 @@ const ModernEpicurean = () => {
               {/* Bottom Left - Chef */}
               <div className="rounded-3xl overflow-hidden h-48 bg-orange-100 flex items-center justify-center">
                 <img 
-                  src="/epic_chef.png" 
+                  src="/src/assets/epic_chef.png" 
                   alt="Expert Chef" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -72,7 +72,7 @@ const ModernEpicurean = () => {
               {/* Bottom Right - Cocktail */}
               <div className="rounded-3xl overflow-hidden h-48 bg-gray-900">
                 <img 
-                  src="/epic_cocktail.png" 
+                  src="/src/assets/epic_cocktail.png" 
                   alt="Signature Cocktail" 
                   className="w-full h-full object-cover opacity-90 hover:scale-105 hover:opacity-100 transition-all duration-500"
                 />

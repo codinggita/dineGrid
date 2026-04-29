@@ -16,7 +16,7 @@ const deals = [
     originalPrice: '$28.00',
     dealPrice: '$7.60',
     discount: '75% OFF',
-    image: '/midnight_pasta_deal_1777288449317.png',
+    image: 'https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&q=80&w=600',
     tags: ['Premium Selection'],
     status: 'Only 2 left',
     time: '42 mins'
@@ -28,7 +28,7 @@ const deals = [
     originalPrice: '$45.00',
     dealPrice: '$10.50',
     discount: '75% OFF',
-    image: '/midnight_sushi_deal_1777288475108.png',
+    image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80&w=600',
     tags: ['Best Seller'],
     status: 'Nearly Sold Out',
     time: '15 mins'
@@ -40,7 +40,7 @@ const deals = [
     originalPrice: '$24.00',
     dealPrice: '$9.00',
     discount: '60% OFF',
-    image: '/midnight_burger_deal_1777288491729.png',
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=600',
     tags: ['Last Call'],
     status: 'Limited Quantity',
     time: '28 mins'

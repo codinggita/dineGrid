@@ -6,21 +6,21 @@ const collections = [
     title: "Quick Bites",
     badge: "Under 30 mins",
     badgeColor: "bg-[var(--color-primary)] text-white",
-    image: "/quick-bites.png"
+    image: "/src/assets/quick-bites.png"
   },
   {
     id: 2,
     title: "Date Night",
     badge: "Romantic",
     badgeColor: "bg-[var(--color-tertiary)] text-white",
-    image: "/date-night.png"
+    image: "/src/assets/date-night.png"
   },
   {
     id: 3,
     title: "Late Night Legends",
     badge: "Open past 12am",
     badgeColor: "bg-[var(--color-secondary)] text-white",
-    image: "/late-night.png"
+    image: "/src/assets/late-night.png"
   }
 ];
 
