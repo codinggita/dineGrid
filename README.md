@@ -1,46 +1,20 @@
-# 🍽️ Dine Grid — Frontend
+# DineGrid 🍽️
 
-> **Skip the Wait. Reserve Your Table. Save on Midnight Meals.**
-> A modern restaurant queue management and late-night dining platform — built with React.js
+**DineGrid** is a premium, comprehensive restaurant management and reservation platform designed exclusively for high-end culinary experiences (currently themed for *The Spice House • Kalol*). It seamlessly bridges the gap between a stunning customer-facing interface and a powerful, modular administrative backend. 
 
-<br />
-
-[![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![React Router](https://img.shields.io/badge/React_Router-v6-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
-[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+Built with the "Titanium Luxury" & "Culinary Logic" design system, DineGrid ensures a visually stunning, smooth, and highly responsive experience across all devices.
 
 ---
 
-## 🔗 Links
-
-| | |
-|---|---|
-| 🌐 Live Demo | [dinegrid.vercel.app](#) |
-| 🎥 Video Walkthrough | [Watch Demo](#) |
-| 🗂️ Backend Repo | [dine-grid-backend](#) |
-| 🎨 Figma Design | [Open Figma Prototype](https://www.figma.com/proto/wODk5OYF7qmvW3zCsY2Fzr/Untitled?page-id=0%3A1&node-id=245-4&viewport=35468%2C-15250%2C0.35&t=lS5z9R7jmI5H7UyB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=51%3A13) |
----
-
-## 📌 About The Project
-
-**Dine Grid** is a full-featured restaurant tech platform that eliminates physical waiting by giving diners a virtual queue experience and giving restaurant owners complete control over their floor in real time.
-
-### The Problem It Solves
-- Diners waste time standing in line with no visibility on wait time
-- Restaurants lose revenue on empty tables during late-night hours
-- Food goes to waste when last-minute bookings don't fill seats
-
-### The Solution
-- 📲 Join a virtual queue from anywhere — get notified when your table is ready
-- 🌙 Claim discounted late-night rescue meals before they go to waste
-- 🧑‍🍳 Restaurant owners manage capacity, queues, and deals from one dashboard
+## 🎨 Figma Design Prototype
+Explore the interactive high-fidelity design prototype that shaped DineGrid's user interface:
+[**View Figma Prototype**](https://www.figma.com/proto/wODk5OYF7qmvW3zCsY2Fzr/Untitled?page-id=0%3A1&node-id=245-4&viewport=35468%2C-15250%2C0.35&t=lS5z9R7jmI5H7UyB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=51%3A13)
 
 ---
 
 ## 🎨 Design System — Culina Fresh
 
-Dine Grid uses the **Culina Fresh** design system — a token-based system ensuring visual consistency across every screen.
+DineGrid uses the **Culina Fresh** design system — a token-based system ensuring visual consistency across every screen.
 
 ### Color Palette
 
@@ -97,199 +71,120 @@ Dine Grid uses the **Culina Fresh** design system — a token-based system ensur
 | `<Tag />` | Cuisine, Label | `--color-tertiary` |
 
 ---
+## ✨ Key Features
 
-## 🛠️ Tech Stack
+### 👨‍🍳 Customer Portal
+*   **Premium Landing Experience:** Cinematic hero section, curated culinary collections, and VIP club integration.
+*   **Dynamic Digital Menu ("Culina Fresh"):** High-quality visuals with categorized navigation (Mains, Starters, Breads, Biryanis).
+*   **Seamless Booking Flow:** Step-by-step reservation system including Date/Time selection, Interactive Table picking, Guest Details, and secure Payment mockups.
+*   **Authentication:** JWT-based Login and Registration.
 
-| Category | Tool | Version | Purpose |
-|---|---|---|---|
-| Framework | React.js | 18.x | Core UI framework |
-| Routing | React Router | v6 | Client-side page routing |
-| Styling | Tailwind CSS | 3.x | Utility-first styling |
-| HTTP Client | Axios | Latest | REST API calls to backend |
-| Real-Time | Socket.io Client | Latest | Live queue position updates |
-| State Management | Context API + useReducer | — | Auth & queue global state |
-| Icons | Lucide React | Latest | Consistent icon set |
-| Notifications | React Hot Toast | Latest | Queue alerts & confirmations |
-| Deployment | Vercel | — | CI/CD + hosting |
+### 🛡️ Admin Dashboard (Command Center)
+*   **Live Queue Management:** Real-time waitlist tracking with notify/seat capabilities.
+*   **Interactive Floor Plan:** Visual table management (Available, Occupied, Reserved, Cleaning) with capacity and current order previews.
+*   **Reservations & Pre-Orders:** Comprehensive tables for managing bookings and active kitchen queues.
+*   **Approvals:** Review interface for VIP requests, large parties, and special accommodations.
+*   **Menu & Staff Management:** Interfaces to add/edit menu items and manage employee shifts and roles.
+*   **Reports & Analytics:** Dashboard for tracking revenue trends, popular items, and daily covers.
 
 ---
 
-## 📁 Project Structure
+## 🏗️ Folder Structure
 
-```bash
-dine-grid-frontend/
+The project is structured as a full-stack monorepo:
+
+```text
+dineGrid/
 │
-├── public/
-├── src/
-│   ├── assets/
-│   ├── styles/
-│   ├── components/
-│   ├── pages/
-│   ├── context/
-│   ├── hooks/
-│   ├── services/
-│   ├── utils/
-│   ├── App.jsx
-│   └── main.jsx
+├── frontend/                 # React (Vite) Frontend Application
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/           # Images, SVGs, and global styles
+│   │   ├── components/       # Reusable UI components (Navbar, Footer, Modals)
+│   │   ├── context/          # React Context providers (Auth, Booking)
+│   │   ├── pages/            
+│   │   │   ├── admin/        # All Admin Dashboard views
+│   │   │   ├── auth/         # Login & Signup pages
+│   │   │   ├── booking/      # Customer reservation flow
+│   │   │   └── customer/     # Customer facing landing/menu pages
+│   │   ├── utils/            # Helper functions
+│   │   ├── App.jsx           # Main routing layer
+│   │   └── index.css         # Tailwind & custom CSS variables
+│   ├── package.json
+│   └── tailwind.config.js
 │
-├── .env.example
-├── .gitignore
-├── package.json
-├── tailwind.config.js
-├── vite.config.js
+├── backend/                  # Node.js / Express Backend API
+│   ├── src/
+│   │   ├── config/           # DB connection / environment configs
+│   │   ├── controllers/      # Route logic (authController, etc.)
+│   │   ├── models/           # Mongoose schemas (User, Booking, Menu)
+│   │   └── routes/           # Express API endpoints
+│   ├── .env                  # Environment variables
+│   ├── index.js              # Server entry point
+│   └── package.json
+│
 └── README.md
 ```
 
 ---
 
-## 📱 Pages & Routes
+## 🚀 Tech Stack
 
-| Page | Route | User | Description |
-|---|---|---|---|
-| Home | `/` | All | Hero, feature highlights, CTA for diners and owners |
-| Explore | `/explore` | Diner | Browse restaurants with filters: cuisine, distance, wait time, open now, late night |
-| Restaurant Detail | `/restaurant/:id` | Diner | Full profile — menu, reviews, live queue status, late-night deals |
-| Queue View | `/queue` | Diner | Live position tracker, countdown, pre-order cart, leave/notify actions |
-| Deals | `/deals` | Diner | Late-night rescue listings with % off, portions left, closing timer |
-| Dashboard | `/dashboard` | Owner | Capacity stats, live queue table, footfall chart, capacity controls |
-| Login | `/login` | All | Email/password + Google OAuth sign in |
-| Sign Up | `/signup` | All | Account creation for diners and restaurant owners |
-| How It Works | `/how-it-works` | All | 3-step explainer for both user types |
+### Frontend
+*   **Framework:** React 19 + Vite
+*   **Styling:** Tailwind CSS v4, Framer Motion (Animations)
+*   **Icons:** Lucide React
+*   **Routing:** React Router DOM
 
----
-
-## ✨ Feature Breakdown
-
-### 👤 Diner Experience
-| Feature | Description |
-|---|---|
-| 🔍 Restaurant Discovery | Browse 43+ live restaurants filtered by cuisine, distance, wait time, open status |
-| 🟢 Live Queue Join | Add yourself to a virtual waitlist from anywhere — no physical waiting |
-| 📍 Real-Time Position | See your exact spot (`#4 in line`) updating live via Socket.io |
-| ⏱️ Accurate ETA | Dynamic wait estimate based on current capacity and queue pace |
-| 🛒 Pre-Order While Waiting | Add drinks/appetizers to cart — prep starts when you reach `#1` |
-| 🔔 Push Notification | Get alerted 5 minutes before your table is ready |
-| 🌙 Late Night Rescue Deals | Claim premium meals at up to 75% off — limited portions, closes-in timers |
-| 🗺️ Nearby & Fast | See restaurants under 5-minute wait highlighted on the explore screen |
-
-### 🏪 Restaurant Owner Experience
-| Feature | Description |
-|---|---|
-| 📊 Dashboard Overview | Capacity %, active queue count, revenue saved metric at a glance |
-| 🪑 Live Queue Table | Party name, size, pre-order status — Seat Now or Notify with one tap |
-| 🏗️ Capacity Controls | Set max seats per zone (Main Dining, Patio), toggle walk-in vs reservation ratio |
-| 📈 Footfall Analytics | Hourly bar chart showing visitor traffic throughout the service window |
-| 🌙 Midnight Mode | Activate late-night menus, flash deals, and VIP priority queuing after 10 PM |
-| 💬 Pre-Order Visibility | See kitchen prep orders before the diner arrives to reduce turnaround time |
+### Backend
+*   **Runtime:** Node.js
+*   **Framework:** Express.js
+*   **Database:** MongoDB via Mongoose
+*   **Authentication:** JSON Web Tokens (JWT), bcryptjs
+*   **Utilities:** CORS, dotenv
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Getting Started
 
 ### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) and [MongoDB](https://www.mongodb.com/) installed on your local machine.
 
-- Node.js `>= 18.x`
-- npm `>= 9.x` or yarn
-
-### Installation
-
+### 1. Clone the repository
 ```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/dine-grid-frontend.git
-cd dine-grid-frontend
+git clone https://github.com/anshp2931-gif/dineGrid.git
+cd dineGrid
+```
 
-# 2. Install all dependencies
+### 2. Setup the Backend
+Open a new terminal and run:
+```bash
+cd backend
 npm install
+```
+Create a `.env` file in the `backend` directory:
+```env
+PORT=5000
+MONGO_URL=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_jwt_key
+```
+Start the backend server:
+```bash
+npm run dev  # or nodemon index.js
+```
 
-# 3. Set up environment variables
-cp .env.example .env
-# Fill in the values below
-
-# 4. Start the development server
+### 3. Setup the Frontend
+Open a separate terminal and run:
+```bash
+cd frontend
+npm install
+```
+Start the React development server:
+```bash
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Available Scripts
-
-```bash
-npm run dev        # Start Vite dev server
-npm run build      # Production build
-npm run preview    # Preview production build locally
-npm run lint       # Run ESLint
-```
+The frontend will be available at `http://localhost:5173` and the backend at `http://localhost:5000`.
 
 ---
-
-## 🔐 Environment Variables
-
-```env
-# Backend API base URL
-VITE_API_URL=http://localhost:5000
-
-# Google OAuth Client ID
-VITE_GOOGLE_CLIENT_ID=your_google_oauth_client_id
-
-# Socket.io server URL
-VITE_SOCKET_URL=http://localhost:5000
-```
-
-> ⚠️ Never commit your `.env` file. It is already listed in `.gitignore`.
-
----
-
-## 🗺️ Roadmap
-
-- [x] Restaurant listing with live filters
-- [x] Virtual queue join & live position tracking
-- [x] Pre-order flow (menu + cart while waiting)
-- [x] Late-night rescue deals with countdown timers
-- [x] Restaurant owner dashboard
-- [x] Culina Fresh design system integration
-- [ ] Real-time push notifications (Firebase FCM)
-- [ ] Map view for nearby restaurants
-- [ ] Loyalty & rewards system for repeat diners
-- [ ] Multi-language support (i18n)
-- [ ] Dark mode toggle
-- [ ] React Native mobile app
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch — `git checkout -b feature/your-feature`
-3. Commit your changes — `git commit -m "feat: add your feature"`
-4. Push to the branch — `git push origin feature/your-feature`
-5. Open a Pull Request
-
-
-
-```md
-## 🎨 Figma Prototype
-
-View the complete UI/UX prototype for **Dine Grid** here:
-
-🔗 [Open Figma Prototype](https://www.figma.com/proto/wODk5OYF7qmvW3zCsY2Fzr/Untitled?node-id=214-145&viewport=35468%2C-15250%2C0.35&t=Cx7EC9NLGYd4OrWc-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=214%3A145&show-proto-sidebar=1&page-id=0%3A1)
-
----
-```
-
----
-
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👨‍💻 Author
-
-**Your Name**
-[Portfolio](#) &nbsp;·&nbsp; [LinkedIn](#) &nbsp;·&nbsp; [GitHub](#)
-
----
-
-> *"Good food shouldn't go to waste. Dine Grid connects the dots seamlessly."*
+*Designed & Built for The Spice House • Kalol.*
