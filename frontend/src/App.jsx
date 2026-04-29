@@ -31,6 +31,8 @@ import DealsPage from './pages/deals/DealsPage';
 import { AuthProvider } from './context/AuthContext';
 import LoginPage from './components/login';
 import SignupPage from './pages/auth/SignupPage';
+import { HelmetProvider } from 'react-helmet-async';
+import SEO from './components/SEO';
 
 // ── Admin pages ─────────────────────────────────────────────
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -49,6 +51,7 @@ import CustomerHome from './pages/customer/CustomerHome';
 
 const LandingPage = () => (
   <div className="min-h-screen bg-[var(--color-neutral-light)]">
+    <SEO title="Home" description="Elevate your dining management with DineGrid - the ultimate culinary queue system." />
     <Navbar />
     <main>
       <Hero />
@@ -66,56 +69,59 @@ const LandingPage = () => (
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          {/* ── Public routes ── */}
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/menu" element={
-            <div className="min-h-screen bg-white">
-              <Navbar />
-              <div className="pt-10"><MenuShowcase /></div>
-              <Footer />
-            </div>
-          } />
-          <Route path="/how-it-works" element={<HowItWorksPage />} />
-          <Route path="/DealsPage.jsx" element={<DealsPage />} />
+      <HelmetProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            {/* ── Public routes ── */}
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/menu" element={
+              <div className="min-h-screen bg-white">
+                <SEO title="Our Menu" description="Explore our curated collection of culinary delights." />
+                <Navbar />
+                <div className="pt-10"><MenuShowcase /></div>
+                <Footer />
+              </div>
+            } />
+            <Route path="/how-it-works" element={<HowItWorksPage />} />
+            <Route path="/DealsPage.jsx" element={<DealsPage />} />
 
-          {/* ── Auth routes ── */}
-          <Route path="/admin-signup" element={<SignupPage />} />
+            {/* ── Auth routes ── */}
+            <Route path="/admin-signup" element={<SignupPage />} />
 
-          {/* ── Admin routes ── */}
-          <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
-          <Route path="/admin/dashboard"       element={<AdminDashboard />} />
-          <Route path="/admin/live-queue"      element={<LiveQueue />} />
-          <Route path="/admin/tables"          element={<TablesFloorPlan />} />
-          <Route path="/admin/reservations"    element={<Reservations />} />
-          <Route path="/admin/pre-orders"      element={<PreOrders />} />
-          <Route path="/admin/approvals"       element={<Approvals />} />
-          <Route path="/admin/menu-management" element={<MenuManagement />} />
-          <Route path="/admin/reports"         element={<ReportsAnalytics />} />
-          <Route path="/admin/staff"           element={<Staff />} />
-          <Route path="/admin/settings"        element={<Settings />} />
+            {/* ── Admin routes ── */}
+            <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/live-queue" element={<LiveQueue />} />
+            <Route path="/admin/tables" element={<TablesFloorPlan />} />
+            <Route path="/admin/reservations" element={<Reservations />} />
+            <Route path="/admin/pre-orders" element={<PreOrders />} />
+            <Route path="/admin/approvals" element={<Approvals />} />
+            <Route path="/admin/menu-management" element={<MenuManagement />} />
+            <Route path="/admin/reports" element={<ReportsAnalytics />} />
+            <Route path="/admin/staff" element={<Staff />} />
+            <Route path="/admin/settings" element={<Settings />} />
 
-          {/* ── Customer route ── */}
-          <Route path="/customer" element={<CustomerHome />} />
+            {/* ── Customer route ── */}
+            <Route path="/customer" element={<CustomerHome />} />
 
-          {/* ── Booking flow ── */}
-          <Route path="/book/*" element={
-            <BookingProvider>
-              <Routes>
-                <Route path="date"    element={<BookingDate />} />
-                <Route path="table"   element={<BookingTable />} />
-                <Route path="details" element={<BookingDetails />} />
-                <Route path="payment" element={<BookingPayment />} />
-                <Route path="success" element={<BookingSuccess />} />
-              </Routes>
-            </BookingProvider>
-          } />
-        </Routes>
-      </BrowserRouter>
+            {/* ── Booking flow ── */}
+            <Route path="/book/*" element={
+              <BookingProvider>
+                <Routes>
+                  <Route path="date" element={<BookingDate />} />
+                  <Route path="table" element={<BookingTable />} />
+                  <Route path="details" element={<BookingDetails />} />
+                  <Route path="payment" element={<BookingPayment />} />
+                  <Route path="success" element={<BookingSuccess />} />
+                </Routes>
+              </BookingProvider>
+            } />
+          </Routes>
+        </BrowserRouter>
     </AuthProvider>
+    </HelmetProvider>
   );
 }
 

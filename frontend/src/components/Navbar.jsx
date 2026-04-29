@@ -41,7 +41,7 @@ const Navbar = () => {
 
           {/* Left: Logo & Brand Name */}
           <Link to="/" className="flex items-center gap-2 group cursor-pointer shrink-0">
-            <img src="/logo.png" alt="DineGrid Logo" className="h-8 w-8 object-contain" />
+            <img src="/src/assets/logo.png" alt="DineGrid Logo" className="h-8 w-8 object-contain" />
             <span className="text-xl lg:text-2xl font-[var(--font-headline)] text-[var(--color-primary)] tracking-tight">DineGrid</span>
           </Link>
 
@@ -132,7 +132,7 @@ const Navbar = () => {
           >
             <div className="flex justify-between items-center h-20 px-4 sm:px-6 border-b border-white/5">
               <div className="flex items-center gap-2">
-                <img src="/logo.png" alt="Logo" className="h-8 w-8 object-contain" />
+                <img src="/src/assets/logo.png" alt="Logo" className="h-8 w-8 object-contain" />
                 <span className="text-xl font-[var(--font-headline)] text-[var(--color-primary)]">DineGrid</span>
               </div>
             </div>

@@ -20,7 +20,7 @@ const SmarterWay = () => {
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 hover:shadow-2xl transition-shadow duration-300 border border-gray-100 flex flex-col">
             <div className="h-64 overflow-hidden relative">
               <img 
-                src="/hungry-diner.png" 
+                src="/src/assets/hungry-diner.png" 
                 alt="Hungry Diner" 
                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
               />
@@ -57,7 +57,7 @@ const SmarterWay = () => {
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 hover:shadow-2xl transition-shadow duration-300 border border-gray-100 flex flex-col">
             <div className="h-64 overflow-hidden relative">
               <img 
-                src="/restaurateur.png" 
+                src="/src/assets/restaurateur.png" 
                 alt="Restaurateur" 
                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
               />

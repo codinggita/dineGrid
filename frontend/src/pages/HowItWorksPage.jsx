@@ -88,7 +88,7 @@ const HowItWorksPage = () => {
 
       {/* ── Page Hero ── */}
       <section className="relative bg-[var(--color-neutral)] text-white py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: 'url("/premium-hero-bg.png")' }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: 'url("/src/assets/premium-hero-bg.png")' }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-[var(--color-neutral)]" />
         <div className="absolute top-0 right-0 w-80 h-80 bg-[var(--color-primary)]/20 rounded-full blur-3xl" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">

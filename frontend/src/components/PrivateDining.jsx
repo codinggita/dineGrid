@@ -9,7 +9,7 @@ const PrivateDining = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/private_dining.png" 
+              src="/src/assets/private_dining.png" 
               alt="Private Dining Room" 
               className="w-full h-full object-cover"
             />

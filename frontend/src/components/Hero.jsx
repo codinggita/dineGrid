@@ -19,7 +19,7 @@ const Hero = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center scale-105"
-        style={{ backgroundImage: 'url("/premium-hero-bg.png")' }}
+        style={{ backgroundImage: 'url("/src/assets/premium-hero-bg.png")' }}
       />
 
       {/* Dark overlay — solid, no fade to white */}

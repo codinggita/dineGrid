@@ -8,7 +8,44 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <title>DineGrid - Culinary Queue Management</title>
+  <title>DineGrid</title>
+  <meta name="description" content="DineGrid - Premium Dining Management" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "DineGrid Premium Dining",
+      "image": "https://dine-grid.vercel.app/logo.png",
+      "@id": "https://dine-grid.vercel.app",
+      "url": "https://dine-grid.vercel.app",
+      "telephone": "+1234567890",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Culinary St",
+        "addressLocality": "Kalol",
+        "postalCode": "382721",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 23.25,
+        "longitude": 72.5
+      },
+      "servesCuisine": "Multi-cuisine, Indian, Global Fusion",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "11:00",
+          "closes": "23:00"
+        }
+      ],
+      "menu": "https://dine-grid.vercel.app/menu",
+      "acceptsReservations": "True"
+    }
+  </script>
 </head>
 
 <body>
