@@ -6,6 +6,12 @@ Built with the "Titanium Luxury" & "Culinary Logic" design system, DineGrid ensu
 
 ---
 
+## 🌐 Live Deployment
+The application is live and unified under a single production link:
+[**https://dine-grid.vercel.app**](https://dine-grid.vercel.app)
+
+---
+
 ## 🎨 Figma Design Prototype
 Explore the interactive high-fidelity design prototype that shaped DineGrid's user interface:
 [**View Figma Prototype**](https://www.figma.com/proto/wODk5OYF7qmvW3zCsY2Fzr/Untitled?page-id=0%3A1&node-id=245-4&viewport=35468%2C-15250%2C0.35&t=lS5z9R7jmI5H7UyB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=51%3A13)
