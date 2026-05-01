@@ -18,6 +18,12 @@ Explore the interactive high-fidelity design prototype that shaped DineGrid's us
 
 ---
 
+## 📄 API Documentation
+Explore our fully interactive API endpoints and documentation via our public Postman collection:
+[**View Postman API Documentation**](https://documenter.getpostman.com/view/50839333/2sBXqKnzaE)
+
+---
+
 ## 🎨 Design System — Culina Fresh
 
 DineGrid uses the **Culina Fresh** design system — a token-based system ensuring visual consistency across every screen.
