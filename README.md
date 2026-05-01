@@ -8,7 +8,7 @@ Built with the "Titanium Luxury" & "Culinary Logic" design system, DineGrid ensu
 
 ## 🌐 Live Deployment
 The application is live and unified under a single production link:
-[**https://dine-grid.vercel.app**](https://dine-grid.vercel.app)
+[**https://dine-grid.vercel.app**](https://dine-grid-ansh.vercel.app/)
 
 ---
 
