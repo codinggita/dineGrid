@@ -2,7 +2,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+
 import authRoutes from './src/routes/authRoutes.js';
+import bookingRoutes from './src/routes/bookingRoutes.js';
+import menuRoutes from './src/routes/menuRoutes.js';
 
 dotenv.config();
 
@@ -14,6 +17,8 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/bookings', bookingRoutes);
+app.use('/api/menu', menuRoutes);
 
 // Health check
 app.get('/health', (req, res) => {

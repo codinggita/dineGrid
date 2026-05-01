@@ -17,9 +17,7 @@ const createSendToken = (user, statusCode, res) => {
   res.status(statusCode).json({
     status: 'success',
     token,
-    data: {
-      user,
-    },
+    data: { user },
   });
 };
 
@@ -27,13 +25,11 @@ export const signup = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
 
-    // Check if user exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ status: 'fail', message: 'Email already exists' });
     }
 
-    // Hash password
     const hashedPassword = await bcrypt.hash(password, 12);
 
     const newUser = await User.create({
@@ -53,24 +49,20 @@ export const login = async (req, res) => {
   try {
     const { email, password, role } = req.body;
 
-    // 1) Check if email and password exist
     if (!email || !password) {
       return res.status(400).json({ status: 'fail', message: 'Please provide email and password' });
     }
 
-    // 2) Check if user exists && password is correct
     const user = await User.findOne({ email }).select('+password');
 
     if (!user || !(await bcrypt.compare(password, user.password))) {
       return res.status(401).json({ status: 'fail', message: 'Incorrect email or password' });
     }
 
-    // 3) Optional: Verify role matches (if strict role-based login is desired)
     if (role && user.role !== role) {
       return res.status(401).json({ status: 'fail', message: `Unauthorized: You are not registered as ${role}` });
     }
 
-    // 4) If everything ok, send token to client
     createSendToken(user, 200, res);
   } catch (err) {
     res.status(400).json({ status: 'error', message: err.message });
