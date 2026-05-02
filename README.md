@@ -24,6 +24,18 @@ Explore our fully interactive API endpoints and documentation via our public Pos
 
 ---
 
+## 🔁 Closed Pull Requests
+Track all merged/closed pull requests for this project:
+[**View Closed PRs**](https://github.com/codinggita/dineGrid/pulls?q=is%3Apr+is%3Aclosed)
+
+---
+
+## 🎥 Project Demo Video
+Watch the project walkthrough on YouTube:
+[**Watch Demo**](https://www.youtube.com/watch?v=496P1hxNG1Q&t=2s)
+
+---
+
 ## 🎨 Design System — Culina Fresh
 
 DineGrid uses the **Culina Fresh** design system — a token-based system ensuring visual consistency across every screen.
