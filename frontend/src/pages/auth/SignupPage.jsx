@@ -16,6 +16,7 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   
+  const [isLoading, setIsLoading] = useState(false);
   const { signup } = useAuth();
   const navigate = useNavigate();
 
@@ -31,6 +32,7 @@ export default function Signup() {
     }
     
     setError("");
+    setIsLoading(true);
     try {
       const fullName = `${firstName} ${lastName}`;
       const userData = await signup(fullName, email, password, role);
@@ -39,6 +41,8 @@ export default function Signup() {
       else navigate('/menu');
     } catch (err) {
       setError(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -117,7 +121,7 @@ export default function Signup() {
             )}
 
             {/* Name Row */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="mb-4">
                 <label className="text-sm font-semibold text-gray-700">
                   First Name
@@ -235,9 +239,10 @@ export default function Signup() {
             {/* Button */}
             <button 
               type="submit"
-              className="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-bold transition active:scale-95"
+              disabled={isLoading}
+              className="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-bold transition active:scale-95 disabled:bg-green-300 disabled:cursor-not-allowed"
             >
-              Sign up as {role === "customer" ? "Customer" : "Admin"}
+              {isLoading ? "Signing up..." : `Sign up as ${role === "customer" ? "Customer" : "Admin"}`}
             </button>
           </form>
 

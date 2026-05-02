@@ -29,7 +29,7 @@ const Approvals = () => {
   return (
     <AdminLayout>
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
           <div>
             <h1 className="text-2xl font-bold text-[#171d16]">Approvals</h1>
             <p className="text-sm text-[#6f7a6b] mt-0.5">Review and manage pending special requests and large group bookings.</p>

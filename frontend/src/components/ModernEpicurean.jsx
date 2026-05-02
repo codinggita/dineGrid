@@ -7,13 +7,13 @@ import epicCocktail from '../assets/epic_cocktail.png';
 
 const ModernEpicurean = () => {
   return (
-    <section className="py-24 bg-[var(--color-neutral-light)] text-[var(--color-neutral)]">
+    <section className="py-16 md:py-24 bg-[var(--color-neutral-light)] text-[var(--color-neutral)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           
           {/* Left Content */}
           <div className="flex-1">
-            <h2 className="text-4xl md:text-5xl font-[var(--font-headline)] mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-[var(--font-headline)] mb-6 tracking-tight">
               Designed for the <span className="text-[var(--color-neutral)] opacity-70">Modern</span> Epicurean
             </h2>
             <p className="text-lg font-[var(--font-body)] text-gray-600 mb-10 leading-relaxed">
@@ -47,7 +47,7 @@ const ModernEpicurean = () => {
           <div className="flex-1 w-full max-w-2xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Top Left - Burger */}
-              <div className="rounded-3xl overflow-hidden h-48 bg-gray-200">
+              <div className="rounded-3xl overflow-hidden h-36 sm:h-48 bg-gray-200">
                 <img 
                   src={epicBurger} 
                   alt="Premium Burger" 
@@ -56,7 +56,7 @@ const ModernEpicurean = () => {
               </div>
               
               {/* Top Right - Woodfire Pizza */}
-              <div className="rounded-3xl overflow-hidden h-48 bg-orange-100">
+              <div className="rounded-3xl overflow-hidden h-36 sm:h-48 bg-orange-100">
                 <img 
                   src={epicPizza} 
                   alt="Woodfire Pizza" 
@@ -65,7 +65,7 @@ const ModernEpicurean = () => {
               </div>
 
               {/* Bottom Left - Chef */}
-              <div className="rounded-3xl overflow-hidden h-48 bg-orange-100 flex items-center justify-center">
+              <div className="rounded-3xl overflow-hidden h-36 sm:h-48 bg-orange-100 flex items-center justify-center">
                 <img 
                   src={epicChef} 
                   alt="Expert Chef" 
@@ -74,7 +74,7 @@ const ModernEpicurean = () => {
               </div>
 
               {/* Bottom Right - Cocktail */}
-              <div className="rounded-3xl overflow-hidden h-48 bg-gray-900">
+              <div className="rounded-3xl overflow-hidden h-36 sm:h-48 bg-gray-900">
                 <img 
                   src={epicCocktail} 
                   alt="Signature Cocktail" 

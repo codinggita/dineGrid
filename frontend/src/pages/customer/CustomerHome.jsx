@@ -22,7 +22,7 @@ const CustomerHome = () => {
   return (
     <div className="min-h-screen bg-[#f5fbef]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       {/* Header */}
-      <header className="bg-white border-b border-[#becab9] px-8 py-4 flex items-center justify-between">
+      <header className="bg-white border-b border-[#becab9] px-4 sm:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 bg-[#006e1c] rounded-xl flex items-center justify-center">
             <UtensilsCrossed className="w-5 h-5 text-white" />
@@ -41,12 +41,12 @@ const CustomerHome = () => {
       </header>
 
       {/* Body */}
-      <main className="max-w-4xl mx-auto px-6 py-16">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-          <h1 className="text-4xl font-bold text-[#171d16] mb-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#171d16] mb-2">
             Welcome back, <span className="text-[#006e1c] capitalize">{user?.name || 'Guest'}</span>! 👋
           </h1>
-          <p className="text-[#6f7a6b] mb-12 text-lg">What would you like to do today?</p>
+          <p className="text-sm md:text-base text-gray-500 mb-8">What would you like to do today?</p>
 
           <div className="grid md:grid-cols-3 gap-6">
             {cards.map(({ icon: Icon, label, desc, color, bg }, i) => (
@@ -61,7 +61,7 @@ const CustomerHome = () => {
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5" style={{ background: bg }}>
                   <Icon className="w-8 h-8" style={{ color }} />
                 </div>
-                <h3 className="text-lg font-bold text-[#171d16] mb-2">{label}</h3>
+                <h3 className="text-lg font-bold text-[#171d16] mb-1">{label}</h3>
                 <p className="text-sm text-[#6f7a6b] leading-relaxed">{desc}</p>
               </motion.div>
             ))}

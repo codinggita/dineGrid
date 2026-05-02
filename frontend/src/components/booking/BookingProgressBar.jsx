@@ -43,7 +43,7 @@ const BookingProgressBar = ({ currentStep }) => {
                 {isDone ? <Check className="w-4 h-4" /> : step.id}
               </motion.div>
               <span
-                className={`text-xs font-semibold text-center leading-tight transition-colors ${
+                className={`text-[10px] sm:text-xs font-semibold text-center leading-tight transition-colors ${
                   isActive ? 'text-[var(--color-primary)]' : isDone ? 'text-gray-500' : 'text-gray-400'
                 }`}
               >

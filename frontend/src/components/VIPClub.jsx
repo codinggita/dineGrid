@@ -3,18 +3,18 @@ import { Mail } from 'lucide-react';
 
 const VIPClub = () => {
   return (
-    <section className="py-24 bg-[var(--color-neutral)] text-white border-t border-gray-800">
+    <section className="py-16 md:py-24 bg-[var(--color-neutral)] text-white border-t border-gray-800">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         <div className="inline-block px-4 py-1.5 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 text-[var(--color-primary)] text-sm font-[var(--font-label)] mb-8 tracking-widest uppercase">
           The Chef's Table
         </div>
         
-        <h2 className="text-4xl md:text-5xl font-[var(--font-headline)] mb-6 tracking-tight">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-[var(--font-headline)] mb-4 md:mb-6 tracking-tight">
           Unlock the Unbookable.
         </h2>
         
-        <p className="text-lg font-[var(--font-body)] text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base md:text-lg font-[var(--font-body)] text-white/70 mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed">
           Join the inner circle. Get early access to highly anticipated restaurant openings, secret off-menu items, and exclusive reservations before anyone else.
         </p>
 

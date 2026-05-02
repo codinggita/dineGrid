@@ -15,7 +15,26 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// Serverless MongoDB connection middleware
+const MONGO_URL = process.env.MONGO_URL;
+
+app.use(async (req, res, next) => {
+  // If already connected, proceed
+  if (mongoose.connection.readyState === 1) {
+    return next();
+  }
+  // Otherwise, connect first
+  try {
+    await mongoose.connect(MONGO_URL);
+    console.log('✅ Connected to MongoDB');
+    next();
+  } catch (err) {
+    console.error('❌ MongoDB connection error:', err.message);
+    res.status(500).json({ message: 'Database connection failed' });
+  }
+});
+
+// Routes (must be AFTER the connection middleware)
 app.use('/api/auth', authRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/menu', menuRoutes);
@@ -25,19 +44,11 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok', message: 'DineGrid API is running' });
 });
 
-// Database connection
-const MONGO_URL = process.env.MONGO_URL;
 const PORT = process.env.PORT || 5000;
-
-mongoose.connect(MONGO_URL)
-  .then(() => {
-    console.log('✅ Connected to MongoDB');
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on port ${PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.error('❌ MongoDB connection error:', err.message);
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
   });
+}
 
 export default app;
