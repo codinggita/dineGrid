@@ -29,7 +29,6 @@ import DealsPage from './pages/deals/DealsPage';
 
 // ── Auth ────────────────────────────────────────────────────
 import { AuthProvider } from './context/AuthContext';
-import LoginPage from './components/login';
 import SignupPage from './pages/auth/SignupPage';
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from './components/SEO';
