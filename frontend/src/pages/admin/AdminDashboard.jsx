@@ -14,14 +14,14 @@ const initialTables = [
 
 const tableColor = {
   available: 'bg-[#e8f5e9] border-[#4caf50] text-[#2e7d32]',
-  occupied:  'bg-[#ffebee] border-[#ef5350] text-[#c62828]',
-  reserved:  'bg-[#fce4ec] border-[#f48fb1] text-[#c2185b]',
-  action:    'bg-[#fff8e1] border-[#ffb300] text-[#e65100]',
+  occupied: 'bg-[#ffebee] border-[#ef5350] text-[#c62828]',
+  reserved: 'bg-[#fce4ec] border-[#f48fb1] text-[#c2185b]',
+  action: 'bg-[#fff8e1] border-[#ffb300] text-[#e65100]',
 };
 
 const bars = [
   { label: '11a', h: 20 }, { label: '12p', h: 40 }, { label: '1p', h: 85, active: true },
-  { label: '2p', h: 55 },  { label: '3p', h: 30 },  { label: '4p', h: 15 },
+  { label: '2p', h: 55 }, { label: '3p', h: 30 }, { label: '4p', h: 15 },
   { label: '5p', h: 10 },
 ];
 
@@ -50,7 +50,7 @@ const AdminDashboard = () => {
     <AdminLayout>
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
         {/* Alert Banner */}
-        <div className="bg-[#ff9800] text-white rounded-xl px-6 py-3 flex items-center gap-3 mb-4 shadow-sm">
+        <div className="bg-[#ff9800] text-white rounded-xl px-4 sm:px-6 py-3 flex items-center gap-3 mb-4 shadow-sm flex-wrap">
           <Clock className="w-5 h-5 shrink-0" />
           <span className="font-semibold">Current Estimated Wait Time: <strong>38 minutes</strong></span>
         </div>
@@ -66,11 +66,11 @@ const AdminDashboard = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
           {[
             { label: 'Call Next Guest', icon: Megaphone },
-            { label: 'Add Walk-in',     icon: UserPlus },
-            { label: 'Mark Table Ready',icon: CheckSquare },
+            { label: 'Add Walk-in', icon: UserPlus },
+            { label: 'Mark Table Ready', icon: CheckSquare },
           ].map(({ label, icon: Icon }) => (
-            <button 
-              key={label} 
+            <button
+              key={label}
               onClick={() => handleAction(label)}
               className="flex items-center justify-center gap-2 bg-[#006e1c] hover:bg-[#005016] text-white py-3 px-4 rounded-xl font-semibold text-sm transition-all shadow-sm hover:shadow-md"
             >
@@ -95,8 +95,8 @@ const AdminDashboard = () => {
               <h3 className="text-sm font-bold text-[#3f4a3c] mb-4">Live Floor Plan</h3>
               <div className="grid grid-cols-5 gap-2 mb-4">
                 {tables.map(t => (
-                  <button 
-                    key={t.id} 
+                  <button
+                    key={t.id}
                     onClick={() => toggleTableStatus(t.id)}
                     className={`border-2 rounded-lg px-3 py-2 text-center text-xs font-bold transition transform hover:scale-105 active:scale-95 cursor-pointer ${tableColor[t.status]}`}
                     title="Click to toggle status"
@@ -106,7 +106,7 @@ const AdminDashboard = () => {
                 ))}
               </div>
               <div className="flex items-center gap-4 flex-wrap">
-                {[['available','#4caf50','Available'],['occupied','#ef5350','Occupied'],['reserved','#f48fb1','Reserved'],['action','#ffb300','Action']].map(([,c,l])=>(
+                {[['available', '#4caf50', 'Available'], ['occupied', '#ef5350', 'Occupied'], ['reserved', '#f48fb1', 'Reserved'], ['action', '#ffb300', 'Action']].map(([, c, l]) => (
                   <div key={l} className="flex items-center gap-1.5 text-[11px] text-[#6f7a6b] font-medium">
                     <span className="w-2.5 h-2.5 rounded-full" style={{ background: c }} />{l}
                   </div>

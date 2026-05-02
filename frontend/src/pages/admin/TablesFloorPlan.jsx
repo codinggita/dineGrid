@@ -85,12 +85,12 @@ const TablesFloorPlan = () => {
     <AdminLayout>
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
           <div>
             <h1 className="text-2xl font-bold text-[#171d16]">Tables & Floor Plan</h1>
             <p className="text-sm text-[#6f7a6b] mt-0.5">Real-time table status and management</p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             {[['available','#4caf50','Available'],['occupied','#ef5350','Occupied'],['cleaning','#ffb300','Cleaning'],['reserved','#f48fb1','Reserved']].map(([,c,l])=>(
               <div key={l} className="flex items-center gap-1.5 text-xs text-[#6f7a6b] font-medium hidden sm:flex">
                 <span className="w-2.5 h-2.5 rounded-full" style={{background:c}}/>{l}

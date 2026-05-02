@@ -73,12 +73,12 @@ const Reservations = () => {
   return (
     <AdminLayout>
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
           <div>
             <h1 className="text-2xl font-bold text-[#171d16]">Reservations</h1>
             <p className="text-sm text-[#6f7a6b] mt-0.5">Manage all table bookings and guest arrivals</p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <button onClick={handleFilterToggle} className="flex items-center gap-2 border border-[#becab9] bg-white text-[#3f4a3c] text-sm font-medium px-4 py-2 rounded-full hover:bg-[#f0f6ea] transition"><Filter className="w-4 h-4" /> Filter: {filter}</button>
             <button onClick={() => setShowAddModal(true)} className="flex items-center gap-2 bg-[#006e1c] text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-[#005016] transition"><Plus className="w-4 h-4" /> New Booking</button>
           </div>

@@ -176,7 +176,7 @@ const Navbar = () => {
                     <LogIn size={20} /> Login
                   </Link>
                   <Link
-                    to="/signup"
+                    to="/admin-signup"
                     onClick={() => setIsOpen(false)}
                     className="w-full py-4 rounded-2xl bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white font-[var(--font-label)] text-xl shadow-2xl shadow-[var(--color-primary)]/40 transition-all flex items-center justify-center"
                   >

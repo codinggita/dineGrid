@@ -19,7 +19,7 @@ const MenuShowcase = () => {
   const ActiveComponent = menuSections.find(s => s.category === activeTab)?.Component || MainCourse;
 
   return (
-    <section className="py-24 bg-white font-['Inter']">
+    <section className="py-16 md:py-24 bg-white font-['Inter']">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -27,10 +27,10 @@ const MenuShowcase = () => {
           <div className="flex justify-center mb-4">
             <Utensils className="text-[var(--color-primary)] w-12 h-12" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-[var(--color-neutral)] mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[var(--color-neutral)] mb-4 md:mb-6 tracking-tight">
             {showFullMenu ? "Full Digital Menu" : "Signature Menu Highlights"}
           </h2>
-          <p className="text-xl text-gray-500">
+          <p className="text-base md:text-xl text-gray-500">
             {showFullMenu 
               ? "A chronological journey through our partner restaurants' finest culinary creations."
               : "A curated selection of the finest dishes from our partner restaurants, crafted by world-class chefs."
@@ -46,7 +46,7 @@ const MenuShowcase = () => {
                 <button
                   key={section.category}
                   onClick={() => setActiveTab(section.category)}
-                  className={`px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 ${
+                  className={`px-5 sm:px-8 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-medium transition-all duration-300 ${
                     activeTab === section.category 
                     ? 'bg-[var(--color-primary)] text-white shadow-lg shadow-[var(--color-primary)]/20' 
                     : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
@@ -66,7 +66,7 @@ const MenuShowcase = () => {
             <div className="mt-16 flex justify-center">
               <button 
                 onClick={() => setShowFullMenu(true)}
-                className="border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-sm"
+                className="border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 shadow-sm"
               >
                 View Full Digital Menu
               </button>
@@ -74,13 +74,13 @@ const MenuShowcase = () => {
           </>
         ) : (
           /* Sequential Full Menu View */
-          <div className="space-y-16 animate-fade-in-up">
+          <div className="space-y-16 md:space-y-24 animate-fade-in-up">
             
             {/* Back Button */}
             <div className="flex justify-center mb-8">
               <button 
                 onClick={() => setShowFullMenu(false)}
-                className="flex items-center gap-2 text-gray-500 hover:text-[var(--color-primary)] font-medium transition-colors px-6 py-2 rounded-full hover:bg-[var(--color-primary)]/5"
+                className="flex items-center gap-2 text-gray-500 hover:text-[var(--color-primary)] font-medium transition-colors px-5 py-2 rounded-full hover:bg-[var(--color-primary)]/5"
               >
                 <ArrowLeft className="w-5 h-5" /> Back to Highlights
               </button>
@@ -89,8 +89,8 @@ const MenuShowcase = () => {
             <div className="space-y-24">
               {menuSections.map((section, sIdx) => (
                 <div key={sIdx} className="relative">
-                  <div className="flex items-center gap-6 mb-12">
-                    <h3 className="text-3xl font-bold text-[var(--color-neutral)] whitespace-nowrap">
+                  <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
+                    <h3 className="text-2xl md:text-3xl font-bold text-[var(--color-neutral)] whitespace-nowrap">
                       {section.category}
                     </h3>
                     <div className="h-px bg-gray-200 w-full"></div>

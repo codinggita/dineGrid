@@ -88,18 +88,18 @@ const HowItWorksPage = () => {
       <Navbar />
 
       {/* ── Page Hero ── */}
-      <section className="relative bg-[var(--color-neutral)] text-white py-20 overflow-hidden">
+      <section className="relative bg-[var(--color-neutral)] text-white py-14 md:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url(${heroBg})` }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-[var(--color-neutral)]" />
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[var(--color-primary)]/20 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-48 h-48 md:w-80 md:h-80 bg-[var(--color-primary)]/20 rounded-full blur-3xl" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <span className="inline-block text-[10px] font-black text-[var(--color-primary)] uppercase tracking-[0.4em] mb-4 bg-[var(--color-primary)]/15 px-4 py-1.5 rounded-full">
             The Guest Flow
           </span>
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-5">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-5">
             How DineGrid Works
           </h1>
-          <p className="text-lg text-white/70 max-w-xl mx-auto mb-8">
+          <p className="text-base md:text-lg text-white/70 max-w-xl mx-auto mb-6 md:mb-8">
             From doorstep to table in three seamless steps. Powered by real-time intelligence and precision engineering.
           </p>
           <Link
@@ -112,11 +112,11 @@ const HowItWorksPage = () => {
       </section>
 
       {/* ── Effortless Arrival ── */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[var(--color-primary)]/5 rounded-full blur-3xl pointer-events-none" />
+      <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] md:w-[700px] md:h-[350px] bg-[var(--color-primary)]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Effortless Arrival</h2>
+          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">Effortless Arrival</h2>
             <p className="text-gray-400 text-lg">Three steps between you and the perfect table.</p>
           </div>
 
@@ -153,9 +153,9 @@ const HowItWorksPage = () => {
       </section>
 
       {/* ── Why DineGrid — Stats Bar ── */}
-      <section className="bg-[var(--color-neutral)] py-14">
+      <section className="bg-[var(--color-neutral)] py-10 md:py-14">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-between gap-10">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center sm:items-start justify-between gap-8 md:gap-10">
             <div>
               <p className="text-xs font-black text-gray-500 uppercase tracking-widest mb-1">Why DineGrid?</p>
               <h2 className="text-2xl font-bold text-white">Superior tech for superior taste.</h2>
@@ -173,13 +173,13 @@ const HowItWorksPage = () => {
       </section>
 
       {/* ── Restaurant Features ── */}
-      <section className="py-24 bg-[var(--color-neutral-light)]">
+      <section className="py-16 md:py-24 bg-[var(--color-neutral-light)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-4">
             <span className="text-[10px] font-black text-[var(--color-secondary)] uppercase tracking-[0.4em]">Restaurant Partners</span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-neutral)] leading-tight max-w-sm">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-neutral)] leading-tight max-w-sm">
               Empowering the world's finest kitchens.
             </h2>
             <Link
@@ -232,10 +232,10 @@ const HowItWorksPage = () => {
       </section>
 
       {/* ── Benefits: Diners & Restaurants ── */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Built for Everyone</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Built for Everyone</h2>
             <p className="text-gray-400 text-lg">Whether you're hungry or running the floor.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -285,10 +285,10 @@ const HowItWorksPage = () => {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-24 bg-[var(--color-neutral-light)]">
+      <section className="py-16 md:py-24 bg-[var(--color-neutral-light)]">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Ready to reclaim your time?</h2>
-          <p className="text-gray-400 text-lg mb-10">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Ready to reclaim your time?</h2>
+          <p className="text-gray-400 text-base md:text-lg mb-8 md:mb-10">
             Join the elite circle of diners and restaurateurs who have evolved beyond the line.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -64,7 +64,7 @@ const LoginPage = () => {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="bg-white rounded-2xl shadow-[0px_10px_25px_rgba(0,0,0,0.1)] p-10 w-full max-w-md"
+          className="bg-white rounded-2xl shadow-[0px_10px_25px_rgba(0,0,0,0.1)] p-6 sm:p-10 w-full max-w-md"
         >
           <h2 className="text-2xl font-bold text-[#171d16] mb-1">Welcome back</h2>
           <p className="text-sm text-[#6f7a6b] mb-8">Sign in to continue to DineGrid</p>

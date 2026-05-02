@@ -30,9 +30,9 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-24 bg-white text-[var(--color-neutral)] relative overflow-hidden">
+    <section id="how-it-works" className="py-16 md:py-24 bg-white text-[var(--color-neutral)] relative overflow-hidden">
       {/* Soft green blob */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[var(--color-primary)]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[250px] md:w-[700px] md:h-[400px] bg-[var(--color-primary)]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -41,7 +41,7 @@ const HowItWorks = () => {
           <span className="inline-block text-[10px] font-black text-[var(--color-primary)] uppercase tracking-[0.4em] mb-4 bg-[var(--color-primary)]/8 px-4 py-1.5 rounded-full">
             The Guest Flow
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">Effortless Arrival</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-5">Effortless Arrival</h2>
           <p className="text-lg text-gray-500 leading-relaxed">
             DineGrid removes the friction from dining out. From discovery to dessert, we've optimised every step.
           </p>

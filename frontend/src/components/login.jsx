@@ -11,6 +11,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,6 +23,7 @@ const Login = () => {
       return;
     }
     setError('');
+    setIsLoading(true);
     try {
       const userData = await login(email, password, role);
       
@@ -37,6 +39,8 @@ const Login = () => {
       }
     } catch (err) {
       setError(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -170,9 +174,10 @@ const Login = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full rounded-xl bg-[#4CAF50] py-4 text-center font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#388E3C] hover:shadow-xl active:scale-95"
+                  disabled={isLoading}
+                  className="w-full rounded-xl bg-[#4CAF50] py-4 text-center font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#388E3C] hover:shadow-xl active:scale-95 disabled:bg-[#81C784] disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Sign In as {role.charAt(0).toUpperCase() + role.slice(1)}
+                  {isLoading ? 'Signing In...' : `Sign In as ${role.charAt(0).toUpperCase() + role.slice(1)}`}
                 </button>
               </form>
 
