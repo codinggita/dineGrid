@@ -17,11 +17,11 @@ const dessertItems = [
   }
 ];
 
-const Desserts = () => {
+const Desserts = ({ onAddItem }) => {
   return (
     <div className="grid md:grid-cols-2 gap-10">
       {dessertItems.map((item, index) => (
-        <MenuItem key={index} item={item} />
+        <MenuItem key={index} item={item} onAddItem={onAddItem} />
       ))}
     </div>
   );

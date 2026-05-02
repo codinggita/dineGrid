@@ -38,11 +38,11 @@ const starterItems = [
   }
 ];
 
-const Starters = () => {
+const Starters = ({ onAddItem }) => {
   return (
     <div className="grid md:grid-cols-2 gap-10">
       {starterItems.map((item, index) => (
-        <MenuItem key={index} item={item} />
+        <MenuItem key={index} item={item} onAddItem={onAddItem} />
       ))}
     </div>
   );

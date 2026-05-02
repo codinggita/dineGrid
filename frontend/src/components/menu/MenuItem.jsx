@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flame } from 'lucide-react';
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, onAddItem }) => {
   return (
     <div className="group relative flex flex-col sm:flex-row gap-6 p-6 rounded-3xl border border-gray-50 hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden">
       <div className="w-full sm:w-48 h-48 rounded-2xl overflow-hidden shrink-0 shadow-md">
@@ -24,6 +24,14 @@ const MenuItem = ({ item }) => {
         <p className="text-gray-500 leading-relaxed text-sm">
           {item.desc}
         </p>
+        <div className="mt-4">
+          <button
+            onClick={() => onAddItem?.(item)}
+            className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+          >
+            Add Order
+          </button>
+        </div>
       </div>
     </div>
   );

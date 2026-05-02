@@ -68,7 +68,7 @@ const LandingPage = () => (
 
 function App() {
   return (
-      <HelmetProvider>
+    <HelmetProvider>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
@@ -119,7 +119,7 @@ function App() {
             } />
           </Routes>
         </BrowserRouter>
-    </AuthProvider>
+      </AuthProvider>
     </HelmetProvider>
   );
 }

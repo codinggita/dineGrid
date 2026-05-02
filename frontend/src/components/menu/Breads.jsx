@@ -42,11 +42,11 @@ const breadItems = [
   }
 ];
 
-const Breads = () => {
+const Breads = ({ onAddItem }) => {
   return (
     <div className="grid md:grid-cols-2 gap-10">
       {breadItems.map((item, index) => (
-        <MenuItem key={index} item={item} />
+        <MenuItem key={index} item={item} onAddItem={onAddItem} />
       ))}
     </div>
   );
