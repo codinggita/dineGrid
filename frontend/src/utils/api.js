@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+const rawBase = import.meta.env.VITE_API_URL?.replace(/\/$/, '') || '';
+const baseURL = rawBase ? `${rawBase}/api` : 'https://backend-lyart-xi-67.vercel.app/api';
+
 const api = axios.create({
-  baseURL: 'https://backend-lyart-xi-67.vercel.app/api',
+  baseURL,
   headers: {
     'Content-Type': 'application/json',
   },
