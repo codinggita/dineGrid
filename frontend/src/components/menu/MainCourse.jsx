@@ -59,11 +59,11 @@ const mainCourseItems = [
   }
 ];
 
-const MainCourse = () => {
+const MainCourse = ({ onAddItem }) => {
   return (
     <div className="grid md:grid-cols-2 gap-10">
       {mainCourseItems.map((item, index) => (
-        <MenuItem key={index} item={item} />
+        <MenuItem key={index} item={item} onAddItem={onAddItem} />
       ))}
     </div>
   );
